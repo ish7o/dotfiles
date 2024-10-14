@@ -12,5 +12,5 @@ alias vim='nvim'
 export POWERLINE_COMMAND=oh-my-posh
 
 fastfetch
-eval "$(oh-my-posh init zsh)"
+eval "$(oh-my-posh init zsh --config ~/dotfiles/.config/oh-my-posh/config.toml)"
 

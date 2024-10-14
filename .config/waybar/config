@@ -1,123 +1,95 @@
 {
 	"layer": "top",
 	"modules-left": [
-        // "custom/launcher",
-        // "cpu",
-        // "memory",
-        "custom/uptime",
-        // "custom/arrow6",
         "custom/diskspace",
-        // "custom/arrow7",
-        "tray"
+        "custom/uptime",
+        // "tray", // wow, i really do not understand why so many people use it
+        "custom/cuteface"
     ],
 	"modules-center": [
         "hyprland/workspaces"
     ],
 	"modules-right": [
-        // "custom/arrow1",
         "pulseaudio",
-        // "custom/arrow2",
         "clock",
-        // "custom/arrow3",
         "battery",
-        // "custom/arrow4",
         "hyprland/language",
-        // "custom/arrow5",
         "network"
     ],
-    "custom/uptime": {
+    "custom/cuteface": {
         "tooltip": false,
-        "exec": "uptime -p | sed \"s/up //\"",
+        "exec": "~/.config/waybar/scripts/cute_face.sh",
+        "format": "{}",
         "interval": 60
     },
     "custom/diskspace": {
-        "exec": "df -h / | awk 'NR==2 {print $3 \" used, \" $4 \" available\"}'",
+        "tooltip": false,
+        "exec": "~/.config/waybar/scripts/diskspace.sh",
         "interval": 3600,
-        "tooltip": false
+        "format": "{}"
     },
-    "custom/arrow1": {
+    "custom/uptime": {
+        "exec": "~/.config/waybar/scripts/uptime.sh",
+        // "return-type": 
+        "interval": 1,
         "tooltip": false,
-        "format": ""
-    },
-    "custom/arrow2": {
-        "tooltip": false,
-        "format": ""
-    },
-    "custom/arrow3": {
-        "tooltip": false,
-        "format": ""
-    },
-    "custom/arrow4": {
-        "tooltip": false,
-        "format": ""
-    },
-    "custom/arrow5": {
-        "tooltip": false,
-        "format": ""
-    },
-    "custom/arrow6": {
-        "tooltip": false,
-        "format": ""
-    },
-    "custom/arrow7": {
-        "tooltip": false,
-        "format": ""
+        "format": "{}"
     },
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%  {format_source}",
-        "format-bluetooth": " {icon} {volume}% {format_source}",
-        "format-bluetooth-muted": "   {format_source}",
-        "format-muted": "  {format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "",
-        "format-icons": {
+        "format": "└─[{volume}%]─┴─[{format_source}]─┘",
+        "format-bluetooth": "└─[{volume}%]─┴─[{format_source}]─┘",
+        "format-bluetooth-muted": "└─[{format_source}]─┘",
+        "format-muted": "└─[{format_source}]─┘",
+        "format-source": "{volume}%",
+        // "format-source-muted": "",
+        // "format-icons": {
 //            "headphone": "",
 //            "hands-free": "",
 //            "headset": "",
 //            "phone": "",
 //            "portable": "",
 //            "car": "",
-            "default": ["", " ", " "]
-        },
+//            "default": ["", " ", " "]
+//       },
         "on-click": "pavucontrol",
         "on-click-right": "foot -a pw-top pw-top"
     },
     "hyprland/language": {
-        "format": "{}",
+        "format": "└─[{}]─┘",
         "format-en": "EN",
         "format-pl": "PL",
         "format-jp": "JP"
     },
     "hyprland/workspaces": {
-        "icon-size": 24,
+        "icon-size": 18,
         "spacing": 8,
         "on-scroll-up": "hyprctl dispatch workspace r+1",
         "on-scroll-down": "hyprctl dispatch workspace r-1",
-        "format": "{icon}",
+        "format": "[{icon}]",
         "format-icons": {
-            // "1": "一",
-            // "2": "二",
-            // "3": "三",
-            // "4": "四",
-            // "5": "五",
-            // "6": "六",
-            // "7": "七",
-            // "8": "八",
-            // "9": "九",
-            // "10": "十"
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十"
         }
     },
 
     "network": {
         "tooltip": true,
-        "format-wifi": "  {essid} ({ipaddr})",
-        "format-disconnected": "¯\\_(ツ)_/¯",
+        "format-wifi": "└─[{essid}]─┴─[{ipaddr}]─┘",
+        "format-disconnected": "[¯\\_(ツ)_/¯]",
         "tooltip-format": "{ifname}: {ipaddr} via {gwaddr} ({signalStrength})\nUp    {bandwidthUpBits}\nDown  {bandwidthUpBits}",
-        "format-ethernet": "  {ipAddr}"
+        "format-ethernet": "└─[{ipAddr}]─┘"
     },
     "clock": {
-        "format": "󰥔 {:%H:%M 󰃭 %d %m}",
+        "format": "└─[{:%H:%M]─┴─[%d.%m.%Y}]─┘",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "year",
@@ -147,29 +119,10 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon}  {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-	"tray":{
-		"icon-size":18,
-		"spacing": 10
-	},
-    "cpu": {
-        "interval": 15,
-        "format": " {}%",
-        "max-length": 10
-    },
-    "memory": {
-        "interval": 30,
-        "format": " {}%",
-        "max-length": 10
-    },
-    // "custom/launcher": {
-    //     "format": " ",
-    //     "on-click": "rofi -show drun",
-    //     "on-click-right": "killall rofi"
-    // }
+        "format": "└─[{capacity}%]─┘",
+        "format-charging": "└─[{capacity}%]─┘",
+        "format-plugged": "└─[{capacity}%]─┘",
+        "format-alt": "└─[{time}]─┘"
+        // "format-icons": ["", "", "", "", ""]
+    }
 }

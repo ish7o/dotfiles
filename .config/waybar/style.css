@@ -1,142 +1,94 @@
 @define-color foreground #E3F0F0;
 @define-color background #161615;
-/* @define-color color1     #694200; */
-/* @define-color black #3D3D3C; */
-/* @define-color red #D35163; */
-/* @define-color green #4DAB68; */
-/* #546F33; */
-/* @define-color yellow #F3D58E; */
-/* @define-color blue #3D7387; */
-/* @define-color magenta #9573B5; /1* #EC799A *1/ */
-/* @define-color cyan #66C2BB; */
-/* @define-color white #CEE1E1; */
-
-@define-color red       #171119;
-@define-color green     #171119;
-@define-color yellow    #171119;
-@define-color blue      #171119;
-@define-color magenta   #171119;
-@define-color cyan      #171119;
 
 * {
   border: none;
   text-shadow: none;
   box-shadow: none;
   font-family: "Hurmit Nerd Font", "Noto Sans CJK";
-  font-size: 12px;
-  min-height: 10px;
+  font-size: 10px;
+  min-height: 5px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 window#waybar {
   background: transparent;
 }
 
-window#waybar.hidden {
-  opacity: 0.2;
-}
 
-#language {
-  padding-left: 10px;
-  padding-right: 10px;
+
+/* Modules left */
+
+#custom-diskspace {
+  padding-left: 0px;
+  padding-right: 15px;
   transition: none;
   color: @foreground;
-  /* background: @color1; */
-  /* background: @magenta; */
 }
 
+#custom-uptime {
+  /* padding-left: 5px; */
+  padding-right: 0px;
+  transition: none;
+  color: @foreground;
+}
+
+#custom-cuteface {
+    padding-left: 180px;
+    padding-right: 0px;
+    font-size: 14px;
+    color: @foreground;
+}
+
+/* Modules center */
+
 #workspaces button {
-  font-size: 28px;
+  font-size: 14px;
   color: @foreground;
   border-radius: 0px;
+  border-top: 1px solid transparent;
+  background: transparent;
 }
 
 #workspaces button.active {
-  border-bottom: 1px solid @foreground;
+  border-top: 1px solid @foreground;
 }
 
 #workspaces button:hover {
-  background: transparent;
-  border-bottom: 1px dotted @foreground;
+  border-top: 1px dotted @foreground;
 }
 
-#window {
-  padding-left: 10px;
-  padding-right: 10px;
-  transition: none;
-  color: transparent;
-  background: transparent;
-}
 
-#tags {
-  font-size: 10px;
-  background: #161519;
-  transition: none;
-}
 
-#tags button {
-  transition: none;
-  color: @foreground;
-  background: transparent;
-  font-size: 26px;
-}
 
-#tags button.occupied {
-  transition: none;
-  color: @foreground;
-  background: transparent;
-  font-size: 4px;
-}
-
-#tags button.focused {
-  color: @red;
-  /* border-top: 2px solid @background; */
-  /* border-bottom: 2px solid @background; */
-}
-
-#tags button:hover {
-  transition: none;
-  box-shadow: inherit;
-  text-shadow: inherit;
-  /* color: ; */
-  /* border-color: #E3D48A; */
-}
-
-#network {
-  padding-left: 10px;
-  padding-right: 10px;
-  transition: none;
-  color: @foreground;
-  /* background: @color1; */
-  /* background: @cyan; */
-}
+/* Modules right */
 
 #pulseaudio,
 #pipewire {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 15px;
   transition: none;
   color: @foreground;
-  /* background: @color1; */
-  /* background: @magenta; */
+}
+
+#clock {
+  padding-left: 15px;
+  transition: none;
+  color: @foreground;
 }
 
 #battery {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 15px;
   transition: none;
   color: @foreground;
-  /* background: @color1; */
-  /* background: @blue; */
 }
 
 #battery.charging,
 #battery.plugged {
   color: @foreground;
-  /* background-color: @green; */
 }
 
 #battery.critical:not(.charging) {
-  /* background-color: @red; */
   color: #161519;
   animation-name: blink;
   animation-duration: 0.5s;
@@ -147,120 +99,20 @@ window#waybar.hidden {
 
 @keyframes blink {
   to {
-    /* background-color: @red; */
+    background-color: @foreground;
     color: @foreground;
   }
 }
 
-/* #backlight { */
-/* padding-left: 10px; */
-/* padding-right: 10px; */
-/* 	transition: none; */
-/* 	color: #161519; */
-/* 	background: #E3D48A; */
-/* } */
-
-#clock {
-  padding-left: 10px;
-  padding-right: 10px;
-  transition: none;
-  color: @foreground;
-  /* background: @color1; */
-  /* background: @red; */
+#language {
+    padding-left: 15px;
+    transition: none;
+    color: @foreground;
 }
 
-#custom-diskspace {
-  padding-left: 10px;
-  padding-right: 10px;
-  transition: none;
-  color: @foreground;
-  /* background: @color1; */
-  /* background: @cyan; */
+#network {
+    padding-left: 15px;
+    transition: none;
+    color: @foreground;
 }
 
-#custom-uptime {
-  padding-left: 10px;
-  padding-right: 10px;
-  transition: none;
-  color: @foreground;
-  /* background: @color1; */
-  /* background: @magenta; */
-}
-
-#tray {
-  padding-left: 40px;
-  padding-right: 0px;
-  transition: none;
-  color: @background;
-  background: transparent;
-}
-
-/* #tray * { */
-/*     padding-left: 5px; */
-/*     padding-right: 5px; */
-/*     border-bottom: .25px dotted @background; */
-/* } */
-
-#custom-arrow6,
-#custom-arrow7 {
-  font-size: 18px;
-}
-
-#custom-arrow6 {
-  color: @magenta;
-  /* background: @color1; */
-  /* background: @cyan; */
-}
-
-#custom-arrow7 {
-  color: @cyan;
-  background: transparent;
-}
-
-#custom-arrow1,
-#custom-arrow2,
-#custom-arrow3,
-#custom-arrow4,
-#custom-arrow5 {
-  font-size: 18px;
-}
-
-#custom-arrow1 {
-  color: @magenta;
-  background: transparent;
-}
-
-#custom-arrow2 {
-  color: @red;
-  /* background: @color1; */
-  /* background: @magenta; */
-}
-
-#custom-arrow3 {
-  color: @blue;
-  /* background: @color1; */
-  /* background: @red; */
-}
-
-#custom-arrow4 {
-  color: @magenta;
-  /* background: @color1; */
-  /* background: @blue; */
-}
-
-#custom-arrow5 {
-  color: @cyan;
-  /* background: @color1; */
-  /* background: @magenta; */
-}
-
-/* #custom-launcher { */
-/*   font-size: 18px; */
-/*   padding-left: 8px; */
-/*   padding-top: 3px; */
-/*   padding-bottom: 3px; */
-/*   padding-right: 3px; */
-/*   transition: none; */
-/*   color: @cyan; */
-/*   background: @foreground; */
-/* } */
