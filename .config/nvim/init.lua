@@ -97,6 +97,7 @@ local lspconfig = require("lspconfig")
 lspconfig.pyright.setup({})
 lspconfig.gopls.setup({})
 lspconfig.html.setup({})
+lspconfig.svelte.setup({})
 lspconfig.tsserver.setup({})
 lspconfig.intelephense.setup({})
 lspconfig.lua_ls.setup {

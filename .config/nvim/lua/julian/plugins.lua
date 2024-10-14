@@ -9,6 +9,9 @@ return require('packer').startup(function(use)
 		  requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+    use 'mfussenegger/nvim-dap'
+    use 'mfussenegger/nvim-jdtls'
+
 	use({
 	      "folke/trouble.nvim",
 	      config = function()
@@ -18,6 +21,11 @@ return require('packer').startup(function(use)
 	      end
 	})
 
+    use "othree/html5.vim"
+    use "pangloss/vim-javascript"
+    use "evanleck/vim-svelte"
+
+    use "mattn/emmet-vim"
 
 	use "nvim-lua/plenary.nvim"
 	use "BurntSushi/ripgrep"
