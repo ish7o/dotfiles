@@ -1,5 +1,5 @@
-@define-color foreground #E3F0F0;
-@define-color background #161615;
+@define-color foreground #eae2e7;
+@define-color background #0A0A0A;
 
 * {
   border: none;
@@ -10,11 +10,13 @@
   min-height: 5px;
   padding-left: 0;
   padding-right: 0;
+  color: @foreground;
 }
 
 window#waybar {
-  background: transparent;
+  background: @background;
 }
+
 
 
 
@@ -24,28 +26,28 @@ window#waybar {
   padding-left: 0px;
   padding-right: 15px;
   transition: none;
-  color: @foreground;
+  /* color: @foreground; */
 }
 
 #custom-uptime {
   /* padding-left: 5px; */
   padding-right: 0px;
   transition: none;
-  color: @foreground;
+  /* color: @foreground; */
 }
 
 #custom-cuteface {
     padding-left: 180px;
     padding-right: 0px;
     font-size: 14px;
-    color: @foreground;
+    /* color: @foreground; */
 }
 
 /* Modules center */
 
 #workspaces button {
   font-size: 14px;
-  color: @foreground;
+  /* color: @foreground; */
   border-radius: 0px;
   border-top: 1px solid transparent;
   background: transparent;
@@ -68,24 +70,24 @@ window#waybar {
 #pipewire {
   padding-left: 15px;
   transition: none;
-  color: @foreground;
+  /* color: @foreground; */
 }
 
 #clock {
   padding-left: 15px;
   transition: none;
-  color: @foreground;
+  /* color: @foreground; */
 }
 
 #battery {
   padding-left: 15px;
   transition: none;
-  color: @foreground;
+  /* color: @foreground; */
 }
 
 #battery.charging,
 #battery.plugged {
-  color: @foreground;
+  /* color: @foreground; */
 }
 
 #battery.critical:not(.charging) {
@@ -100,19 +102,19 @@ window#waybar {
 @keyframes blink {
   to {
     background-color: @foreground;
-    color: @foreground;
+    /* color: @foreground; */
   }
 }
 
 #language {
     padding-left: 15px;
     transition: none;
-    color: @foreground;
+    /* color: @foreground; */
 }
 
 #network {
     padding-left: 15px;
     transition: none;
-    color: @foreground;
+    /* color: @foreground; */
 }
 

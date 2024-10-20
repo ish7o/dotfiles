@@ -21,6 +21,3 @@ else
 fi
 echo "└─${uptime_str}─┘"
 
-
-
-

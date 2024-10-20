@@ -3,7 +3,7 @@
 	"modules-left": [
         "custom/diskspace",
         "custom/uptime",
-        // "tray", // wow, i really do not understand why so many people use it
+        // "tray" // wow, i really do not understand why so many people use it
         "custom/cuteface"
     ],
 	"modules-center": [
@@ -20,7 +20,7 @@
         "tooltip": false,
         "exec": "~/.config/waybar/scripts/cute_face.sh",
         "format": "{}",
-        "interval": 60
+        "interval": 1
     },
     "custom/diskspace": {
         "tooltip": false,

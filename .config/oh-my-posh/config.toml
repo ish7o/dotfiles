@@ -43,7 +43,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     template = '{{ .FormattedMs }}'
 
     [blocks.segments.properties]
-      threshold = 5000
+      threshold = 500
 
 [[blocks]]
   type = 'prompt'
@@ -55,20 +55,20 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     style = 'plain'
     foreground_templates = [
       "{{if gt .Code 0}}red{{end}}",
-      "{{if eq .Code 0}}magenta{{end}}",
+      "{{if eq .Code 0}}cyan{{end}}",
     ]
     background = 'transparent'
-    template = '❯'
+    template = '🙜 '
 
 [transient_prompt]
   foreground_templates = [
     "{{if gt .Code 0}}red{{end}}",
-    "{{if eq .Code 0}}magenta{{end}}",
+    "{{if eq .Code 0}}cyan{{end}}",
   ]
   background = 'transparent'
-  template = '❯ '
+  template = '🙜  '
 
 [secondary_prompt]
-  foreground = 'magenta'
+  foreground = 'cyan'
   background = 'transparent'
-  template = '❯❯ '
+  template = ' 🙜 '

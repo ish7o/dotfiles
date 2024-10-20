@@ -11,6 +11,10 @@ vim.keymap.set("n", "<leader>t", "<cmd>Telescope<cr>")
 vim.keymap.set("n", "j", "jzz")
 vim.keymap.set("n", "k", "kzz")
 
+
+-- I dont like this...
+-- vim.keymap.set({"n", "v"}, "<leader>em", "<C-y>,")
+
 -- Telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})

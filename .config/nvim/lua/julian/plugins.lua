@@ -25,6 +25,8 @@ return require('packer').startup(function(use)
     use "pangloss/vim-javascript"
     use "evanleck/vim-svelte"
 
+    use "psf/black"
+
     use "mattn/emmet-vim"
 
 	use "nvim-lua/plenary.nvim"
