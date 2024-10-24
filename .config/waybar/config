@@ -3,7 +3,6 @@
 	"modules-left": [
         "custom/diskspace",
         "custom/uptime",
-        // "tray" // wow, i really do not understand why so many people use it
         "custom/cuteface"
     ],
 	"modules-center": [
