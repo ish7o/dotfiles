@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
     use "othree/html5.vim"
     use "pangloss/vim-javascript"
     use "evanleck/vim-svelte"
+    use "norcalli/nvim-colorizer.lua"
 
     use "psf/black"
 
@@ -113,7 +114,6 @@ return require('packer').startup(function(use)
 
 	use "jiriks74/presence.nvim"
 
-    -- use "norcalli/nvim-colorizer.lua"
 
 -- 	use {
 -- 	    'tiagovla/tokyodark.nvim',

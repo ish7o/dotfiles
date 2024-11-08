@@ -7,7 +7,6 @@ declare -A timezones=(
     ["Eastern Time"]="America/New_York"
     ["Greenwich Mean Time"]="GMT"
     ["Central European Time"]="Europe/Berlin"
-    ["Warsaw"]="Europe/Warsaw"
     ["India Standard Time"]="Asia/Kolkata"
     ["China Standard Time"]="Asia/Shanghai"
     ["Japan Standard Time"]="Asia/Tokyo"
