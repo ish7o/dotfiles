@@ -1,0 +1,73 @@
+configuration {
+  display-drun: "";
+  drun-display-format: "- {name} -";
+  font: "Hurmit Nerd Font 10";
+  modi: "window,run,drun,power";
+  show-icons: false;
+  location: 3;
+  yoffset: 32;
+  xoffset: -32;
+  orientation: vertical;
+}
+
+@theme "~/.config/rofi/theme.rasi"
+
+window {
+  width: 300;
+  border-radius: 8;
+  border-color: @border;
+  border: 2;
+  padding: 12 0 0 0;
+}
+
+element {
+  padding: 6 6 6 10;
+  // text-color: @text-color;
+  background-color: #0000;
+  border-radius: 4;
+  // orientation: vertical;
+}
+
+element selected {
+  // text-color: @bg;
+  // background-color: @border;
+  border-color: @border;
+  border: 2;
+}
+
+element-text {
+  background-color: #00000000;
+  text-color: inherit;
+  // horizontal-align: 0.5;
+}
+
+entry {
+  background-color: @border;
+  padding: 6 12;
+  margin: 0;
+  text-color: @bg;
+}
+
+inputbar {
+  children: [entry];
+}
+
+listview {
+  padding: 0 12;
+  columns: 1;
+  lines: 5;
+  fixed-lines: true;
+}
+
+mainbox {
+  // background-color: @bg;
+  children: [listview, inputbar];
+}
+
+prompt {
+  // background-color: @fg;
+  enabled: false;
+  padding: 12 0 0 12;
+  text-color: @text-color;
+}
+
