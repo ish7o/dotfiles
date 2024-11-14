@@ -1,7 +1,7 @@
 require "julian.remap"
 require "julian.plugins"
 
-require "java.init"
+require "java"
 
 vim.opt     .number             = true
 vim.opt     .relativenumber     = true

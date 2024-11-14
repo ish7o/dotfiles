@@ -50,13 +50,20 @@ return require('packer').startup(function(use)
         config = function()
           require('mason-lspconfig').setup({
             ensure_installed = {
-              "pyright", "gopls", "html", "lua_ls", "tsserver", "rust-analyzer", "jdtls", "intelephense",
+              "pyright", "gopls", "html", "lua_ls", "tsserver",
+              "rust-analyzer", "jdtls", "intelephense",
             },
           })
+
           local lspconfig = require('lspconfig')
           require('mason-lspconfig').setup_handlers({
               function (server_name)
-                  lspconfig[server_name].setup {}
+                  if server_name ~= "jdtls" then
+                      lspconfig[server_name].setup {
+                          flags = { debounce_text_changes = 80 },
+                          on_attach = require('java.init').on_attach,
+                      }
+                  end
               end,
           })
       end
