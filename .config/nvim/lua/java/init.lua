@@ -23,8 +23,8 @@ local on_attach = function(client, bufnr)
   nnoremap('<C-k>', vim.lsp.buf.signature_help, bufopts, "Show signature")
   nnoremap('<space>D', vim.lsp.buf.type_definition, bufopts, "Go to type definition")
   nnoremap('<space>rn', vim.lsp.buf.rename, bufopts, "Rename")
-  nnoremap('<space>ca', vim.lsp.buf.code_action, bufopts, "Code actions")
-  nnoremap('<space>f', function() vim.lsp.buf.format { async = true } end, bufopts, "Format file")
+  -- nnoremap('<space>ca', vim.lsp.buf.code_action, bufopts, "Code actions")
+  nnoremap('<space>fm', function() vim.lsp.buf.format { async = true } end, bufopts, "Format file")
 end
 
 -- `jdtls` configuration for Java files
@@ -64,6 +64,7 @@ local java_config = {
     '-jar', home .. '/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar',
     '-configuration', home .. '/.local/share/nvim/mason/packages/jdtls/config_mac',
     '-data', workspace_folder,
+    '-cp', os.getenv("CLASSPATH"),
   }
 }
 

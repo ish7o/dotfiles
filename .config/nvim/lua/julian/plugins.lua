@@ -61,7 +61,7 @@ return require('packer').startup(function(use)
                   if server_name ~= "jdtls" then
                       lspconfig[server_name].setup {
                           flags = { debounce_text_changes = 80 },
-                          on_attach = require('java.init').on_attach,
+                          on_attach = require('java').on_attach,
                       }
                   end
               end,

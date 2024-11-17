@@ -11,6 +11,8 @@ vim.keymap.set("n", "<leader>t", "<cmd>Telescope<cr>")
 vim.keymap.set("n", "j", "jzz")
 vim.keymap.set("n", "k", "kzz")
 
+-- ["<leader>ca"] = vim.lsp.buf.code_action(),
+vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 
 -- I dont like this...
 -- vim.keymap.set({"n", "v"}, "<leader>em", "<C-y>,")
@@ -51,6 +53,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/<CR>")
 vim.keymap.set("n", "<leader>vpe", "<cmd>e ~/.config/hypr/<CR>")
+vim.keymap.set("n", "<leader>vps", "<cmd>e ~/.config/sway/<CR>")
 vim.keymap.set("n", "<leader>vpc", "<cmd>e ~/.config/<CR>")
 
 vim.keymap.set("n", "<leader><leader>", function()
