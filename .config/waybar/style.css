@@ -1,5 +1,5 @@
-@define-color foreground #eae2e7;
-@define-color background #0A0A0A;
+@define-color foreground #231c1c;
+@define-color background #f3d1d1;
 
 * {
   border: none;
@@ -7,14 +7,15 @@
   box-shadow: none;
   font-family: "Hurmit Nerd Font", "Noto Sans CJK";
   font-size: 10px;
+  font-weight: bold;
   min-height: 5px;
   padding-left: 0;
   padding-right: 0;
-  color: @foreground;
 }
 
 window#waybar {
   background: @background;
+  border-bottom: 2px solid @foreground;
 }
 
 
@@ -22,43 +23,47 @@ window#waybar {
 
 /* Modules left */
 
+#custom-diskspace,
+#custom-uptime {
+    color: @background;
+    background: @foreground;
+}
+
 #custom-diskspace {
   padding-left: 0px;
   padding-right: 15px;
   transition: none;
-  /* color: @foreground; */
 }
 
 #custom-uptime {
-  /* padding-left: 5px; */
   padding-right: 0px;
   transition: none;
-  /* color: @foreground; */
 }
 
-#custom-cuteface {
-    padding-left: 180px;
-    padding-right: 0px;
-    font-size: 14px;
-    /* color: @foreground; */
-}
+
 
 /* Modules center */
 
+#workspaces {
+  padding-left: 15px;
+  padding-right: 15px;
+  background: @foreground;
+}
 #workspaces button {
-  font-size: 14px;
-  /* color: @foreground; */
+  font-size: 12px;
+  color: @background;
   border-radius: 0px;
-  border-top: 1px solid transparent;
   background: transparent;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#workspaces button.active {
-  border-top: 1px solid @foreground;
-}
-
+#workspaces button.focused,
 #workspaces button:hover {
-  border-top: 1px dotted @foreground;
+  border-bottom: 1px solid @foreground;
+  border-top: 1px solid @foreground;
+  color: @foreground;
+  background-color: @background;
 }
 
 
@@ -66,32 +71,20 @@ window#waybar {
 
 /* Modules right */
 
+#language,
+#network,
+#clock,
+#battery,
 #pulseaudio,
 #pipewire {
   padding-left: 15px;
   transition: none;
-  /* color: @foreground; */
-}
-
-#clock {
-  padding-left: 15px;
-  transition: none;
-  /* color: @foreground; */
-}
-
-#battery {
-  padding-left: 15px;
-  transition: none;
-  /* color: @foreground; */
-}
-
-#battery.charging,
-#battery.plugged {
-  /* color: @foreground; */
+  background: @foreground;
+  color: @background;
 }
 
 #battery.critical:not(.charging) {
-  color: #161519;
+  color: #ff0044;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -101,8 +94,7 @@ window#waybar {
 
 @keyframes blink {
   to {
-    background-color: @foreground;
-    /* color: @foreground; */
+    background-color: #f08000;
   }
 }
 
@@ -118,3 +110,14 @@ window#waybar {
     /* color: @foreground; */
 }
 
+
+
+
+/* And last but not least, some customs */
+
+#custom-l1,
+#custom-r2 {
+    background: transparent;
+    color: @foreground;
+    font-size: 18px;
+}

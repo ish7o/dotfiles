@@ -3,24 +3,22 @@
 	"modules-left": [
         "custom/diskspace",
         "custom/uptime",
-        "custom/cuteface"
+        "custom/r2"
     ],
 	"modules-center": [
-        "hyprland/workspaces"
+        "custom/l1",
+        "sway/workspaces",
+        "custom/r2"
     ],
 	"modules-right": [
+        "custom/l1",
         "pulseaudio",
         "clock",
         "battery",
-        "hyprland/language",
+        "sway/language",
         "network"
     ],
-    "custom/cuteface": {
-        "tooltip": false,
-        "exec": "~/.config/waybar/scripts/cute_face.sh",
-        "format": "{}",
-        "interval": 1
-    },
+
     "custom/diskspace": {
         "tooltip": false,
         "exec": "~/.config/waybar/scripts/diskspace.sh",
@@ -29,7 +27,6 @@
     },
     "custom/uptime": {
         "exec": "~/.config/waybar/scripts/uptime.sh",
-        // "return-type": 
         "interval": 1,
         "tooltip": false,
         "format": "{}"
@@ -52,20 +49,30 @@
 //            "default": ["", " ", " "]
 //       },
         "on-click": "pavucontrol",
-        "on-click-right": "foot -a pw-top pw-top"
+        "on-click-right": "kitty pw-top pw-top"
     },
-    "hyprland/language": {
+    "sway/language": {
         "format": "└─[{}]─┘",
         "format-en": "EN",
         "format-pl": "PL",
         "format-jp": "JP"
     },
-    "hyprland/workspaces": {
-        "icon-size": 18,
-        "spacing": 8,
-        "on-scroll-up": "hyprctl dispatch workspace r+1",
-        "on-scroll-down": "hyprctl dispatch workspace r-1",
+    "custom/l1": {
+        "format": "<big> </big>"
+    },
+    "custom/r2": {
+        "format": "<big> </big>"
+    },
+    "sway/workspaces": {
+        "disable-scroll": true,
         "format": "[{icon}]",
+        "persistent-workspaces": {
+            // "1": [],
+            // "2": [],
+            // "3": [],
+            // "4": [],
+            // "5": [],
+        },
         "format-icons": {
             "1": "一",
             "2": "二",
