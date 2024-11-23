@@ -1,0 +1,9 @@
+# Class                 Border  Background  Text    Indicator  Child Border
+client.focused          #231c1c #F3D1D1     #231C1C #231c1c  #00000088
+client.focused_inactive #231c1c #231C1C     #F3D1D1 #231C1C   #00000088
+client.unfocused        #231c1c #222222     #231C1C #231C1C  #00000088
+client.urgent           #cc0000 #900000     #F3D1D1 #900000  #00000088
+
+gaps inner 0
+gaps outer 0
+default_border pixel 0
