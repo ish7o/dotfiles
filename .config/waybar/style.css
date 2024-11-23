@@ -1,90 +1,42 @@
-@define-color foreground #231c1c;
-@define-color background #f3d1d1;
+@define-color foreground #f3d1d1;
+@define-color background #231c1c;
 
 * {
   border: none;
-  text-shadow: none;
   box-shadow: none;
   font-family: "Hurmit Nerd Font", "Noto Sans CJK";
   font-size: 10px;
   font-weight: bold;
-  min-height: 5px;
   padding-left: 0;
   padding-right: 0;
+  border-radius: 0;
+  color: @foreground;
 }
 
 window#waybar {
   background: @background;
-  border-bottom: 2px solid @foreground;
 }
 
 
-
-
-/* Modules left */
-
-#custom-diskspace,
-#custom-uptime {
-    color: @background;
-    background: @foreground;
-}
-
-#custom-diskspace {
-  padding-left: 0px;
-  padding-right: 15px;
-  transition: none;
-}
-
-#custom-uptime {
-  padding-right: 0px;
-  transition: none;
-}
-
-
-
-/* Modules center */
-
-#workspaces {
-  padding-left: 15px;
-  padding-right: 15px;
-  background: @foreground;
-}
-#workspaces button {
-  font-size: 12px;
-  color: @background;
-  border-radius: 0px;
-  background: transparent;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#workspaces button.focused,
-#workspaces button:hover {
-  border-bottom: 1px solid @foreground;
-  border-top: 1px solid @foreground;
-  color: @foreground;
-  background-color: @background;
-}
-
-
-
-
-/* Modules right */
-
+/* Eveerything styles */
 #language,
-#network,
-#clock,
-#battery,
-#pulseaudio,
-#pipewire {
-  padding-left: 15px;
-  transition: none;
-  background: @foreground;
-  color: @background;
+#wireplumber {
+    padding-left: 15px;
+    padding-right: 15px;
+    /* background: @foreground; */
+    /* color: @background; */
 }
 
-#battery.critical:not(.charging) {
-  color: #ff0044;
+#wireplumber {
+    
+}
+
+#language {
+    /* font-size: 16px; */
+}
+
+#battery.warning:not(.charging) {
+  color: #FF8A8A;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -98,20 +50,18 @@ window#waybar {
   }
 }
 
-#language {
-    padding-left: 15px;
-    transition: none;
-    /* color: @foreground; */
+
+
+#workspaces button {
 }
 
-#network {
-    padding-left: 15px;
-    transition: none;
-    /* color: @foreground; */
+#workspaces button.focused {
+    border-bottom: 2px solid @foreground;
 }
 
-
-
+#workspaces button.urgent {
+    border-bottom: 2px solid #FF8A8A;
+}
 
 /* And last but not least, some customs */
 
@@ -120,4 +70,12 @@ window#waybar {
     background: transparent;
     color: @foreground;
     font-size: 18px;
+}
+
+#custom-l1 {
+    padding-left: 15px;
+}
+
+#custom-r2 {
+    padding-right: 15px
 }

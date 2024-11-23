@@ -9,6 +9,8 @@ export INPUT_METHOD=fcitx5
 # export THEME_TX="#F3D1D1"
 # export THEME_AC="#FF8A8A"
 
+export CLASSPATH="$CLASSPATH:$HOME/school/java/java_2024_2a_1/lessons/*/src/main/java"
+
 alias btw="fastfetch"
 alias py="python3"
 alias ls='lsd'

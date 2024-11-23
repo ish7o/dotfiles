@@ -4,7 +4,13 @@ local jdtls = require('jdtls')
 
 -- Define root markers and determine Java project root directory
 local root_markers = {'gradlew', 'mvnw', '.git'}
-local root_dir = require('jdtls.setup').find_root(root_markers)
+local root_dir = require('jdtls.setup').find_root(root_markers) or vim.fn.getcwd()
+
+-- bruh
+if not root_dir:find("src/main/java") then
+  root_dir = root_dir .. "/src/main/java"
+end
+
 local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
 -- Helper function for key mappings
@@ -23,7 +29,7 @@ local on_attach = function(client, bufnr)
   nnoremap('<C-k>', vim.lsp.buf.signature_help, bufopts, "Show signature")
   nnoremap('<space>D', vim.lsp.buf.type_definition, bufopts, "Go to type definition")
   nnoremap('<space>rn', vim.lsp.buf.rename, bufopts, "Rename")
-  -- nnoremap('<space>ca', vim.lsp.buf.code_action, bufopts, "Code actions")
+  nnoremap('<space>ca', vim.lsp.buf.code_action, bufopts, "Code actions")
   nnoremap('<space>fm', function() vim.lsp.buf.format { async = true } end, bufopts, "Format file")
 end
 

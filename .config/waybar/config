@@ -1,78 +1,68 @@
 {
 	"layer": "top",
 	"modules-left": [
-        "custom/diskspace",
-        "custom/uptime",
+        "wireplumber",
+        "sway/workspaces",
+        "custom/l1",
         "custom/r2"
     ],
 	"modules-center": [
         "custom/l1",
-        "sway/workspaces",
+        "custom/r2",
+        "network",
+        "custom/l1",
         "custom/r2"
     ],
 	"modules-right": [
         "custom/l1",
-        "pulseaudio",
-        "clock",
+        "custom/r2",
         "battery",
-        "sway/language",
-        "network"
+        "sway/language"
     ],
 
-    "custom/diskspace": {
-        "tooltip": false,
-        "exec": "~/.config/waybar/scripts/diskspace.sh",
-        "interval": 3600,
-        "format": "{}"
+
+
+    "network": {
+        "tooltip": true,
+        "format-wifi": "└─[{essid}]─┴─[{ipaddr}]─┘",
+        "format-disconnected": "[¯\\_(ツ)_/¯]",
+        "tooltip-format": "{ifname}: {ipaddr} via {gwaddr} ({signalStrength})\nUp    {bandwidthUpBits}\nDown  {bandwidthUpBits}",
+        "format-ethernet": "└─[{ipAddr}]─┘"
     },
-    "custom/uptime": {
-        "exec": "~/.config/waybar/scripts/uptime.sh",
-        "interval": 1,
-        "tooltip": false,
-        "format": "{}"
+
+    "battery": {
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "bat\n{}%",
+        "format-icons": [" ", " ", " ", " ", " "],
     },
-    "pulseaudio": {
-        "scroll-step": 1, // %, can be a float
-        "format": "└─[{volume}%]─┴─[{format_source}]─┘",
-        "format-bluetooth": "└─[{volume}%]─┴─[{format_source}]─┘",
-        "format-bluetooth-muted": "└─[{format_source}]─┘",
-        "format-muted": "└─[{format_source}]─┘",
-        "format-source": "{volume}%",
-        // "format-source-muted": "",
-        // "format-icons": {
-//            "headphone": "",
-//            "hands-free": "",
-//            "headset": "",
-//            "phone": "",
-//            "portable": "",
-//            "car": "",
-//            "default": ["", " ", " "]
-//       },
+
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
         "on-click": "pavucontrol",
-        "on-click-right": "kitty pw-top pw-top"
+        "format-icons": ["", " ", " "]
     },
+    
     "sway/language": {
-        "format": "└─[{}]─┘",
-        "format-en": "EN",
-        "format-pl": "PL",
-        "format-jp": "JP"
+        "format": "{flag}",
+        "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+        "tooltip": false
     },
+
     "custom/l1": {
         "format": "<big> </big>"
     },
     "custom/r2": {
         "format": "<big> </big>"
     },
+
     "sway/workspaces": {
         "disable-scroll": true,
-        "format": "[{icon}]",
-        "persistent-workspaces": {
-            // "1": [],
-            // "2": [],
-            // "3": [],
-            // "4": [],
-            // "5": [],
-        },
+        "format": "「 {icon} 」",
         "format-icons": {
             "1": "一",
             "2": "二",
@@ -83,52 +73,7 @@
             "7": "七",
             "8": "八",
             "9": "九",
-            "10": "十"
+            "10": "十",
         }
-    },
-
-    "network": {
-        "tooltip": true,
-        "format-wifi": "└─[{essid}]─┴─[{ipaddr}]─┘",
-        "format-disconnected": "[¯\\_(ツ)_/¯]",
-        "tooltip-format": "{ifname}: {ipaddr} via {gwaddr} ({signalStrength})\nUp    {bandwidthUpBits}\nDown  {bandwidthUpBits}",
-        "format-ethernet": "└─[{ipAddr}]─┘"
-    },
-    "clock": {
-        "format": "└─[{:%H:%M]─┴─[%d.%m.%Y}]─┘",
-        "tooltip-format": "<tt>{calendar}</tt>",
-        "calendar": {
-            "mode": "year",
-            "mode-mon-col": 6,
-            "weeks-pos": "right",
-            "on-scroll": 1,
-            "on-click-right": "mode",
-            "format": {
-                "months": "<span color='#ccd'><b>{}</b></span>",
-                "days": "<span color='#ccd'><b>{}</b></span>",
-                "weeks": "<span color='#99a'>{}</span>",
-                "weekdays": "<span color='#aab'><b>{}</b></span>",
-                "today": "<span color='#112' background='#eef'><b>{}</b></span>"
-            }
-        },
-        "actions": {
-            "on-click-right": "mode",
-            "on-click-forward": "tz_up",
-            "on-click-backward": "tz_down",
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down"
-        }
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 20
-        },
-        "format": "└─[{capacity}%]─┘",
-        "format-charging": "└─[{capacity}%]─┘",
-        "format-plugged": "└─[{capacity}%]─┘",
-        "format-alt": "└─[{time}]─┘"
-        // "format-icons": ["", "", "", "", ""]
     }
 }

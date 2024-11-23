@@ -21,6 +21,10 @@ return require('packer').startup(function(use)
 	      end
 	})
 
+
+    -- For HackClub
+    use "wakatime/vim-wakatime"
+
     use "othree/html5.vim"
     use "pangloss/vim-javascript"
     use "evanleck/vim-svelte"
