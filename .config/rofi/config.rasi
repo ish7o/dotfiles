@@ -5,8 +5,8 @@ configuration {
   modi: "window,run,drun,power";
   show-icons: false;
   location: 3;
-  yoffset: 32;
-  xoffset: -32;
+  yoffset: 24;
+  xoffset: 2;
   orientation: vertical;
 }
 
@@ -14,25 +14,25 @@ configuration {
 
 window {
   width: 300;
-  border-radius: 8;
-  border-color: @border;
+  border-radius: 6;
+  border-color: @fg;
   border: 2;
   padding: 12 0 0 0;
 }
 
 element {
   padding: 6 6 6 10;
-  // text-color: @text-color;
   background-color: #0000;
-  border-radius: 4;
+  border-radius: 2;
   // orientation: vertical;
+  text-color: @fg;
 }
 
 element selected {
-  // text-color: @bg;
-  // background-color: @border;
-  border-color: @border;
-  border: 2;
+  text-color: @bg;
+  background-color: @fg;
+  // border-color: @fg;
+  // border: 2;
 }
 
 element-text {
@@ -42,7 +42,7 @@ element-text {
 }
 
 entry {
-  background-color: @border;
+  background-color: @fg;
   padding: 6 12;
   margin: 0;
   text-color: @bg;
@@ -68,6 +68,6 @@ prompt {
   // background-color: @fg;
   enabled: false;
   padding: 12 0 0 12;
-  text-color: @text-color;
+  text-color: @fg;
 }
 
