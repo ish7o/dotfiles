@@ -1,8 +1,8 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "width": 21,
     "type": "small",
+    "width": 21,
     // "logo": "small",
     "padding": {
       "top": 3,
@@ -24,7 +24,7 @@
       },
       {
         "type": "title",
-        "format": "{#1}┬─(((───(((─ {user-name-colored}@{host-name-colored} ╶───────╴ ╶─┬" //"╶ - . " // "🮤" // "───────╮"
+        "format": "{#1}┬─(((───(((─ {user-name-colored}@{host-name-colored} " //"╶ - . " // "🮤" // "───────╮"
       },
       // {
       //   "type": "title",

@@ -3,31 +3,27 @@
 	"modules-left": [
         "wireplumber",
         "sway/workspaces",
-        "custom/l1",
-        "custom/r2"
     ],
 	"modules-center": [
-        "custom/l1",
-        "custom/r2",
         "network",
-        "custom/l1",
-        "custom/r2"
     ],
 	"modules-right": [
-        "custom/l1",
-        "custom/r2",
+        "clock",
         "battery",
         "sway/language"
     ],
 
 
+    "clock": {
+        "format": "   {:%H:%M\n%d.%m.%Y}"
+    },
 
     "network": {
         "tooltip": true,
-        "format-wifi": "└─[{essid}]─┴─[{ipaddr}]─┘",
-        "format-disconnected": "[¯\\_(ツ)_/¯]",
-        "tooltip-format": "{ifname}: {ipaddr} via {gwaddr} ({signalStrength})\nUp    {bandwidthUpBits}\nDown  {bandwidthUpBits}",
-        "format-ethernet": "└─[{ipAddr}]─┘"
+        "format-wifi": "{essid} {ipaddr}",
+        "format-disconnected": "¯\\_(ツ)_/¯",
+        "tooltip-format": " {ifname}: {ipaddr} via {gwaddr} ({signalStrength}) \n Up    {bandwidthUpBits}\n Down  {bandwidthUpBits}",
+        "format-ethernet": "{ipAddr}"
     },
 
     "battery": {
@@ -48,17 +44,11 @@
     },
     
     "sway/language": {
-        "format": "{flag}",
+        "format": "{}",
         "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
         "tooltip": false
     },
 
-    "custom/l1": {
-        "format": "<big> </big>"
-    },
-    "custom/r2": {
-        "format": "<big> </big>"
-    },
 
     "sway/workspaces": {
         "disable-scroll": true,

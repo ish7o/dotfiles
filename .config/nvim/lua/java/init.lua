@@ -6,10 +6,9 @@ local jdtls = require('jdtls')
 local root_markers = {'gradlew', 'mvnw', '.git'}
 local root_dir = require('jdtls.setup').find_root(root_markers) or vim.fn.getcwd()
 
--- bruh
-if not root_dir:find("src/main/java") then
-  root_dir = root_dir .. "/src/main/java"
-end
+-- if not root_dir:find("src/main/java") then
+--   root_dir = root_dir .. "/src/main/java"
+-- end
 
 local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 

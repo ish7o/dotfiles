@@ -4,9 +4,9 @@ version = 3
 [var]
 prompt = "|>"
 
-[palette]
-fg = "#ff00aa"
-bg = "transparent"
+# [palette]
+# fg = "magenta"
+# bg = "transparent"
 
 [[blocks]]
     type = "prompt"
@@ -16,7 +16,7 @@ bg = "transparent"
   type = "path"
   style = "plain"
   template = "{{ .Path }}"
-  foreground = "p:fg"
+  foreground = "white"
   background = "p:bg"
 
 [[blocks]]
@@ -27,7 +27,7 @@ bg = "transparent"
       type = "executiontime"
       style = "plain"
       template = "{{ .FormattedMs }}"
-      foreground = "p:fg"
+      foreground = "white"
       background = "p:bg"
           [blocks.segments.properties]
           threshold = 0
@@ -42,10 +42,10 @@ bg = "transparent"
     type="text"
     style = "plain"
     template = "{{ .Var.prompt }}"
-    foreground = "p:fg"
+    foreground = "magenta"
     background = "p:bg"
 
 [transient_prompt]
 template = "{{ .Var.prompt }} "
-foreground = "p:fg"
+foreground = "magenta"
 background = "p:bg"

@@ -16,7 +16,7 @@ set $term kitty
 set $menu rofi
 
 output * bg #231c1c solid_color
-# output * bg $HOME/.wallpapers/my_uwu_wp.png fill
+output * bg $HOME/.wallpapers/bloss.jpg fill
 #
 # Example configuration:
 #
@@ -49,14 +49,24 @@ exec swayidle -w \
 #
 # Example configuration:
 #
-  input "2:14:ETPS/2_Elantech_Touchpad" {
+  # input "2:14:ETPS/2_Elantech_Touchpad" {
+  # }
+
+  # input type:pointer {
+  # }
+
+  input "4152:6204:SteelSeries_SteelSeries_Rival_5" {
       dwt enabled
+      middle_emulation disabled
       tap enabled
       natural_scroll enabled
-      middle_emulation enabled
   }
 
   input * {
+      dwt enabled
+      middle_emulation disabled
+      tap enabled
+      natural_scroll enabled
       xkb_layout pl,jp
       xkb_options grp:rctrl_toggle
   }
@@ -204,6 +214,11 @@ bar {
 bindsym $mod+e exec hyprlock
 
 
+seat seat0 hide_cursor 3000
+
+
 include /etc/sway/config.d/*
 include $HOME/.config/sway/rice
 include $HOME/.config/sway/idle
+
+

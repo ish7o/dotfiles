@@ -1,5 +1,10 @@
-@define-color foreground #f3d1d1;
-@define-color background #231c1c;
+@define-color foreground #f4d2e9;
+@define-color background #070406;
+
+/* background   #070406 */
+/* foreground   #f4d2e9 */
+
+/* color0      #3c1a33 */
 
 * {
   border: none;
@@ -14,13 +19,15 @@
 }
 
 window#waybar {
-  background: @background;
+  background: alpha(@background, .8);
 }
 
 
 /* Eveerything styles */
 #language,
-#wireplumber {
+#wireplumber,
+#battery,
+#clock {
     padding-left: 15px;
     padding-right: 15px;
     /* background: @foreground; */
@@ -36,7 +43,7 @@ window#waybar {
 }
 
 #battery.warning:not(.charging) {
-  color: #FF8A8A;
+  color: #3c1a33;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -46,7 +53,7 @@ window#waybar {
 
 @keyframes blink {
   to {
-    background-color: #f08000;
+    background-color: #3c1a33;
   }
 }
 
@@ -60,22 +67,6 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-    border-bottom: 2px solid #FF8A8A;
+    border-bottom: 2px solid #3c1a33;
 }
 
-/* And last but not least, some customs */
-
-#custom-l1,
-#custom-r2 {
-    background: transparent;
-    color: @foreground;
-    font-size: 18px;
-}
-
-#custom-l1 {
-    padding-left: 15px;
-}
-
-#custom-r2 {
-    padding-right: 15px
-}
