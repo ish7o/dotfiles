@@ -10,7 +10,7 @@ local root_dir = require('jdtls.setup').find_root(root_markers) or vim.fn.getcwd
 --   root_dir = root_dir .. "/src/main/java"
 -- end
 
-local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+local workspace_folder = home .. "/school/java/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
 -- Helper function for key mappings
 local function nnoremap(rhs, lhs, bufopts, desc)

@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
 
 
     -- For HackClub
-    use "wakatime/vim-wakatime"
+    -- use "wakatime/vim-wakatime"
 
     use "othree/html5.vim"
     use "pangloss/vim-javascript"
@@ -138,6 +138,4 @@ return require('packer').startup(function(use)
 		  'rose-pine/neovim',
 		  as = 'rose-pine',
 	})
-
-	use "nvim-tree/nvim-web-devicons"
 end)
