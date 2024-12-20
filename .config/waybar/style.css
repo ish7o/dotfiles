@@ -8,8 +8,7 @@
 
 * {
   border: none;
-  box-shadow: none;
-  font-family: "Hurmit Nerd Font", "Noto Sans CJK";
+  font-family: "Rec Sans Casual", "Noto Sans CJK";
   font-size: 10px;
   font-weight: bold;
   padding-left: 0;
@@ -28,18 +27,17 @@ window#waybar {
 #wireplumber,
 #battery,
 #clock {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+    /* border-left: 1px dotted; */
     /* background: @foreground; */
     /* color: @background; */
 }
 
 #wireplumber {
-    
 }
 
 #language {
-    /* font-size: 16px; */
 }
 
 #battery.warning:not(.charging) {
@@ -60,9 +58,10 @@ window#waybar {
 
 
 #workspaces button {
+    border-bottom: 2px solid transparent;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     border-bottom: 2px solid @foreground;
 }
 

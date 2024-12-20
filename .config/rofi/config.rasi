@@ -5,7 +5,7 @@ configuration {
   modi: "window,run,drun,power";
   show-icons: false;
   location: 3;
-  yoffset: 24;
+  yoffset: 30;
   xoffset: 2;
   orientation: vertical;
 }
@@ -15,9 +15,10 @@ configuration {
 window {
   width: 300;
   border-radius: 6;
-  border-color: @fg;
-  border: 2;
+  // border-color: @fg;
+  // border: 2;
   padding: 12 0 0 0;
+  background-color: @bg;
 }
 
 element {
@@ -25,18 +26,18 @@ element {
   background-color: #0000;
   border-radius: 2;
   // orientation: vertical;
-  text-color: @fg;
+  text-color: @text;
 }
 
 element selected {
-  text-color: @bg;
-  background-color: @fg;
-  // border-color: @fg;
-  // border: 2;
+  text-color: @fg;
+  // background-color: @fg;
+  border-color: @fg;
+  border: 2;
 }
 
 element-text {
-  background-color: #00000000;
+  // background-color: #00000000;
   text-color: inherit;
   // horizontal-align: 0.5;
 }
