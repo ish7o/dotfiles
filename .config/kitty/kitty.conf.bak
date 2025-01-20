@@ -1,0 +1,24 @@
+# font_family Monaspace Radon Var
+font_family Rec Mono Casual Italic
+
+# cursor_trail 50
+
+font_style italic
+font_size   10
+# cursor      #f4d2e9
+cursor_shape block
+
+background_opacity  .8
+background_blur     8
+
+window_padding_width 8 16
+
+
+
+
+
+
+# theme
+include srcery.conf
+# include base2tone-suburb-dark.conf
+# include ./sakura-night.conf

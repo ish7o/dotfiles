@@ -15,8 +15,10 @@ set $right l
 set $term kitty
 set $menu rofi
 
-output * bg #231c1c solid_color
-output * bg $HOME/.wallpapers/bloss.jpg fill
+# output * bg #231c1c solid_color
+# output * bg $HOME/.wallpapers/bloss.jpg fill
+output * bg $HOME/.wallpapers/tokyo.jpg fill
+# output * bg $HOME/.wallpapers/lampions.jpg fill
 #
 # Example configuration:
 #
@@ -196,9 +198,9 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
+    # position top
 
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
 
     swaybar_command waybar
 
@@ -222,3 +224,4 @@ include $HOME/.config/sway/rice
 include $HOME/.config/sway/idle
 
 
+exec fcitx5 -d

@@ -1,5 +1,5 @@
-@define-color foreground #f4d2e9;
-@define-color background #070406;
+@define-color foreground #e0def4;
+@define-color background #191724;
 
 /* background   #070406 */
 /* foreground   #f4d2e9 */
@@ -8,7 +8,7 @@
 
 * {
   border: none;
-  font-family: "Rec Sans Casual", "Noto Sans CJK";
+  font-family: "Rec Mono Casual Italic", "Rec Sans Casual", "Noto Sans CJK";
   font-size: 10px;
   font-weight: bold;
   padding-left: 0;
@@ -26,6 +26,7 @@ window#waybar {
 #language,
 #wireplumber,
 #battery,
+#bluetooth,
 #clock {
     padding-left: 8px;
     padding-right: 8px;
