@@ -40,7 +40,8 @@ window#waybar {
 #language {
 }
 
-#battery.warning:not(.charging) {
+#battery.warning:not(.charging),
+#batter.critical:not(.charging) {
   color: #3c1a33;
   animation-name: blink;
   animation-duration: 0.5s;
