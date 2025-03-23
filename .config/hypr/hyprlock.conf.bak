@@ -9,7 +9,7 @@ general {
 $text = rgb(e0def4)
 $border = rgb(c4a7e7)
 $bg = rgb(908caa)
-$transparent = rgba(0, 0, 0, 0.0)
+$transparent = rgba(00000000)
 
 # file:///tmp/.org.chromium.Chromium.gfgPS9
 
@@ -39,13 +39,15 @@ label {
     valign = bottom
 }
 
+
+
 background {
     # monitor =
 	# path = screenshot
     path = $HOME/.wallpapers/current
 
-    blur_size = 2
-    blur_passes = 2
+    # blur_size = 
+    # blur_passes = 
     noise = 0
 }
 
@@ -53,17 +55,11 @@ background {
 input-field {
     # monitor =
     size = 230, 50
-    outline_thickness = 3
+    outline_thickness = 0
     inner_color = $border
+    # capslock_color = rgb() 
 
     check_color = $transparent
-    capslock_color = $transparent
-    numlock_color = $transparent
-
-    inner_color = rgba(524f6722)
-
-    outer_color = rgba(524f6788) # $border
-
 
     rounding = 24
 
@@ -71,11 +67,12 @@ input-field {
     dots_spacing = 0
     dots_center = false
     dots_rounding = 2
-    dots_text_format = <span foreground='##c4a7e788'>󱓻 </span>
+    dots_text_format = <span foreground='##c4a7e7'>󱓻 </span>
 
+    inner_color = $transparent
     font_color = $text
     fade_on_empty = false
-    placeholder_text =
+    placeholder_text = 
     
     position = 96, -332
     halign = left
@@ -109,7 +106,7 @@ label {
 # helu ish thing
 label {
     # monitor =
-    text = Hello <span font-style='italic' foreground='##eb6f92'>$USER</span>!
+    text = Hello <span text-transform='capitalize' foreground='##eb6f92'>$USER</span>!
     color = $text
     font_size = 24
     font_family = Rec Mono Casual 
@@ -120,17 +117,9 @@ label {
 
 shape {
     size = 3, 162
-    color = rgba(524f6788)
+    color = rgb(524f67)
     rounding = -2
     position = 68, -224
-    halign = left
-    valign = top
-}
-
-shape {
-    size = 444, 100%
-    color = rgba(144, 140, 170, 0.1)
-    position = 0, 0
     halign = left
     valign = top
 }
@@ -138,4 +127,4 @@ shape {
 # label {
 #     monitor = 
 #     text = cmd[update:10000] $HOME/.config/hypr/scripts/slide.sh
-# }23:5 # 4.6 # 
+# }
