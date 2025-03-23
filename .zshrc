@@ -15,10 +15,13 @@ alias ls='lsd'
 alias vi='nvim'
 alias vim='nvim'
 
-alias discord="vesktop"
+export EDITOR="nvim"
+
+# alias discord="vesktop"
 
 export POWERLINE_COMMAND=oh-my-posh
 
 fastfetch
+echo "Next birthday: " $(bday | head -1)
 eval "$(oh-my-posh init zsh --config ~/dotfiles/.config/oh-my-posh/config.toml)"
 
