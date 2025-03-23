@@ -55,7 +55,7 @@ return require('packer').startup(function(use)
           require('mason-lspconfig').setup({
             ensure_installed = {
               "pyright", "gopls", "html", "lua_ls", "tsserver",
-              "rust-analyzer", "jdtls", "intelephense",
+              "rust-analyzer", "jdtls", "intelephense", "asm-lsp",
             },
           })
 

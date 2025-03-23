@@ -8,8 +8,8 @@ vim.keymap.set("n", "C-u>", "<C-u>zz")
 
 vim.keymap.set("n", "<leader>t", "<cmd>Telescope<cr>")
 
-vim.keymap.set("n", "j", "jzz")
-vim.keymap.set("n", "k", "kzz")
+-- vim.keymap.set("n", "j", "jzz")
+-- vim.keymap.set("n", "k", "kzz")
 
 -- ["<leader>ca"] = vim.lsp.buf.code_action(),
 vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")

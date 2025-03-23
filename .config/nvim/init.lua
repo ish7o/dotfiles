@@ -3,7 +3,25 @@ require "julian.plugins"
 
 require "java"
 
+-- Notes
+-- :lua vim.diagnostic.setqflist()
+--          lsp.buf.format()
+--          and so on...
+--
+--  Quickfix list
+--  :copen
+--  :cn[ext]
+--  :cp[revious]
+--  :cfirst / :clast
 
+
+
+-- For local plugins :3
+local plugin_path = os.getenv("HOME") .. "/workspace/neovim/plugins"
+vim.opt.rtp:prepend(plugin_path)
+
+-- package.path = package.path .. ";" .. plugin_path .. "/uwu/lua/?.lua"
+-- require("uwu.init").setup()
 
 vim.opt     .number             = true
 vim.opt     .relativenumber     = true
@@ -17,6 +35,12 @@ vim.g       .netrw_banner       = false
 
 vim.opt     .completeopt        = {'menuone', 'noselect', 'noinsert'}
 vim.opt     .shortmess          = vim.opt.shortmess + { c = true}
+
+vim.filetype.add({
+    pattern = {
+        ['.*%.nasm'] = "nasm",
+    }
+})
 
 -- vim.cmd([[
 --     set signcolumn=yes
@@ -67,9 +91,18 @@ require("presence").setup({
     line_number_text    = "Line %s out of %s0",        -- Format string rendered when `enable_line_number` is set to true (either string or function(line_number: number, line_count: number): string)
 })
 require "nvim-treesitter.configs".setup {
+    ensure_installed = {
+        "asm",
+        "go",
+        "rust",
+        "python",
+        "lua",
+    },
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = false }}
+        additional_vim_regex_highlighting = false
+    }
+}
 require "mason"         .setup() -- Installing lsp formatters and other stuff
 require "autoclose"     .setup() -- Close (, ", { and such ( annoying )
 require "lualine"       .setup() -- The useless bar at the bottom
