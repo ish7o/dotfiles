@@ -1,15 +1,20 @@
 * {
-  bg: #070406cc;
-  // fg: #f4d2e9;
-  border: transparent;
+    black: #1a1a1a78;
+    gray: #857e7e;
+    mid: #c5c5c5;
+    claret: #470012;
+    // red: #7a002b;
+    red: #b2134b;
 
-  fg: #CC82B3;
-  text: #f4d2e9;
-  
-  // background-color: @bg;
-  margin: 0;
-  padding: 0;
-  spacing: 15;
+    transparent: #0000;
 
-  background-color: transparent;
+    margin: 0;
+    padding: 0;
+    spacing: -1;
+    //
+    // fg: #CC82B3;
+    // text: #f4d2e9;
+    // bg: #070406cc;
+    // border: transparent;
+    background-color: @transparent;
 }
